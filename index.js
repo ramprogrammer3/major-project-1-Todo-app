@@ -27,16 +27,11 @@ const todoRouters = require("./routers/todoRoutes")
 app.use("/",todoRouters);
 
 
-app.use("/", (req, res) => {
-    return res.render('home', {
-        title: "Todo App"
-    })
-})
-
 // importing dbconnection function and connecting mongodb compass
 
 const dbConnection = require("./config/db");
 dbConnection();
+
 
 
 app.listen(8080, () => {
