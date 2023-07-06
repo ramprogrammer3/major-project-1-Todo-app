@@ -13,82 +13,83 @@
     <!-- adding eternal stylesheet -->
     <link rel="stylesheet" href="./style.css">
 
-
-
 </head>
 
 <body>
-    <<<<<<< HEAD <!-- Main container for the page -->
-        <div class="main-container">
-            <div class="heading">
-                <h1>Todo App</h1>
-            </div>
+  
+     <div class="main-container">
+        <div class="heading">
+            <h1> <%= title %> </h1>
+        </div>
 
-            <!-- to create a new task  -->
-            <form action="/creatwTodo" method="post">
-                <div class="sec">
-                    <div class="desc_sec">
-                        <div class="description">
-                            <div>Descriprtion</div>
-                            <div>
-                                <input type="description" name="description" placeholder="What is Your Task?" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-date">
-                        <div class="cat">
-                            <div>
-                                <select name="category" id="category">
-                                    <option>WORK</option>
-                                    <option>COLLEGE</option>
-                                    <option>HOME</option>
-                                    <option selected>PERSONAL</option>
-                                    <option>HOBBY</option>
-                                    <option>CODING</option>
-                                    <option>OTHER</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="due">
-                            <div>Due Date to complete</div>
-                            <div><input type="date" name="date" required></div>
+        <form action="/createTodo" method="post">
+            <div class="sec">
+                <div class="desc_sec">
+                    <div class="description">
+                        <div>Descriprtion</div>
+                        <div>
+                            <input type="description" name="description" placeholder="What is Your Task?" required>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="add">Add</button>
-            </form>
-            <!-- to display the task and formate a completed task-->
-            <div class="display" id="delete">
-                <form action="formate-Todo" method="post">
-                    <!-- del btn -->
-                    <div class="del-btn">
-                        <button type="submit" class="del-todo">Formate</button>
+                <div class="category-date">
+                    <div class="cat">
+                        <div>
+                            <select name="category" id="category">
+                                <option>WORK</option>
+                                <option>COLLEGE</option>
+                                <option>HOME</option>
+                                <option selected>PERSONAL</option>
+                                <option>HOBBY</option>
+                                <option>CODING</option>
+                                <option>OTHER</option>
+                            </select>
+                        </div>
                     </div>
+                    <div class="due">
+                        <div>Due Date to complete</div>
+                        <div><input type="date" name="date" required></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="add">Add</button>
+        </form>
+       
+        <div class="display" id="delete">
+            <form action="formate-Todo" method="post">
+               
+                <div class="del-btn">
+                    <button type="submit" class="del-todo">Formate</button>
+                </div>
 
-                    <!-- Loop through the formateTodo array  -->
-                    <div>
-                        <% for(let i of FormateTodo){ %>
-                            <div class="itemdisplay">
-                                <!-- check-box -->
-                                <div class="check"><input type="checkbox" name="<%= i._id %>"></div>
+                <div>
+                    <% for(let i of allTodos){ %>
+                        <div class="itemdisplay">
+                            
+                            <div class="check"><input type="checkbox" name="<%= i._id %>"></div>
 
-                                <div class="desc-date">
-                                    <div class="desc">
-                                        <%= i.description %>
-                                    </div>
-                                    <div class="date-due">
-                                        <% i.date %>
-                                    </div>
+                            <div class="desc-date">
+                                <div class="desc">
+                                    <%= i.description %>
                                 </div>
-                                <div class="categ">
-                                    <%= i.category %>
+                                <div class="date-due">
+                                    <% i.date %>
                                 </div>
                             </div>
-                            <%}%>
-                    </div>
-                </form>
-            </div>
+                            <div class="categ">
+                                <%= i.category %>
+                            </div>
+                        </div>
+                        <%}%>
+                </div>
+            </form>
         </div>
+    </div> 
+
+    <footer>
+        <h1> <%= backEndContributor %> </h1>
+    </footer>
+   
 </body>
 
 </html>
