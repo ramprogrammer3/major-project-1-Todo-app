@@ -31,7 +31,6 @@ exports.getTodo = async(req,res)=>{
             }
 
         })
-
      
         return res.render("home",{
             title : "Todo App",
