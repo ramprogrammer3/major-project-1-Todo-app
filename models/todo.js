@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 
 const todoSchema = new mongoose.Schema({
-    descripton: {
+    description: {
         type: String,
         required: true,
         maxLength: 200,

@@ -18,6 +18,9 @@ app.use(express.static('views'))
 require("dotenv").config();
 const port = process.env.PORT || 8080;
 
+// adding middleware
+app.use(express.json());
+
 
 // importing router and mounting router
 const todoRouters = require("./routers/todoRoutes")
