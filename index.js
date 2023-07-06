@@ -19,6 +19,11 @@ require("dotenv").config();
 const port = process.env.PORT || 8080;
 
 
+// importing router and mounting router
+const todoRouters = require("./routers/todoRoutes")
+app.use("/",todoRouters);
+
+
 app.use("/", (req, res) => {
     return res.render('home', {
         title: "Todo App"
