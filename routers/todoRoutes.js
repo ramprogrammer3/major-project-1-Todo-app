@@ -8,8 +8,10 @@ const {createTodo} = require("../controllers/createTodo");
 
 router.post("/createTodo",createTodo);
 
+// define api delete router
 
-
+const {deleteTodo} = require("../controllers/deleteTodo");
+router.delete("/deleteTodo/:id",deleteTodo)
 
 
 // exporting router 
