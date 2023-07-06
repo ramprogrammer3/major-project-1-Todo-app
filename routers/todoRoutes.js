@@ -14,6 +14,11 @@ const {deleteTodo} = require("../controllers/deleteTodo");
 router.delete("/deleteTodo/:id",deleteTodo)
 
 
+// define api get all todo router
+const {getTodo} = require("../controllers/getTodo")
+
+router.get("/",getTodo)
+
 // exporting router 
 
 module.exports = router;
